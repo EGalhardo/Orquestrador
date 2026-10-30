@@ -1,0 +1,38 @@
+{
+  "name": "egalhardo-ia",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "server": "tsx watch --exclude 'server/projects/**' server/index.ts",
+    "start": "bash start.sh",
+    "dev:all": "concurrently -n api,web -c yellow,cyan \"npm run server\" \"npm run dev\"",
+    "test:server": "tsx server/tests/tools.test.mts && tsx server/tests/sandbox.test.mts && tsx server/tests/config.test.mts && tsx server/tests/auth.test.mts && tsx server/tests/history.test.mts && tsx server/tests/processes.test.mts && tsx server/tests/phase5.test.mts && tsx server/tests/phase6.test.mts"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "better-sqlite3": "^11.10.0",
+    "lucide-react": "^1.47.0",
+    "playwright-core": "1.59",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwindcss": "^4.3.3",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^9.2.4",
+    "oxlint": "^1.81.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

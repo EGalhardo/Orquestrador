@@ -1,0 +1,5 @@
+.forge-config.json
+.sandbox-cache/
+.data/
+projects/*/node_modules
+projects/*/dist
